@@ -509,7 +509,9 @@ input.error {
 }
 .benefits-inner {
   text-align: center;
+  overflow: hidden;
 }
+
 .benefit-image {
   margin-bottom: 22px;
 }
@@ -1605,13 +1607,11 @@ input.error {
 
 .benefits-wrap {
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
+  transition: transform 0.5s ease;
 }
 
 .benefits__item {
-  width: 100%;
-  max-width: 185px;
+  flex: 0 0 100%;
 }
 
 .benefits-arrows {
@@ -1679,15 +1679,7 @@ input.error {
 }
 
 @media (min-width: 576px) {
-  .benefits-wrap {
-    width: 100%;
-    max-width: 576px;
-  }
-}
-
-@media (min-width: 768px) {
-  .benefits-wrap {
-    width: 100%;
-    max-width: 576px;
+  .benefits__item {
+    flex: 0 0 33.333%;
   }
 }
