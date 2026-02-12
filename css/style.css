@@ -511,7 +511,6 @@ input.error {
   text-align: center;
   overflow: hidden;
 }
-
 .benefit-image {
   margin-bottom: 22px;
 }
@@ -545,6 +544,7 @@ input.error {
 #calc {
   background-color: #466a78;
 }
+
 .service-block {
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
@@ -1469,7 +1469,7 @@ input.error {
   }
   ::-webkit-scrollbar-button {
     background-image: url("");
-    background-repeat: no-repeat;
+    background-repat: no-repeat;
     height: 0px;
     width: 8px;
   }
@@ -1598,20 +1598,17 @@ input.error {
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.45);
-  z-index: 9998;
-}
-
-.overlay.active {
-  display: block;
 }
 
 .benefits-wrap {
   display: flex;
-  transition: transform 0.5s ease;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .benefits__item {
   flex: 0 0 100%;
+  box-sizing: border-box;
 }
 
 .benefits-arrows {
@@ -1680,6 +1677,6 @@ input.error {
 
 @media (min-width: 576px) {
   .benefits__item {
-    flex: 0 0 33.333%;
+    flex: 0 0 33.3333%;
   }
 }
