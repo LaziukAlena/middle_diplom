@@ -1,50 +1,56 @@
 const servicesSlider = () => {
-  const wrapper = document.querySelector(".services-wrapper");
-  const slides = document.querySelectorAll(".services-wrapper > div");
-  const prev = document.querySelector(".services__arrow--left");
-  const next = document.querySelector(".services__arrow--right");
-
-  if (!wrapper || slides.length === 0) return;
+  const slider = document.querySelector(".services-slider");
+  const slides = Array.from(
+    document.querySelectorAll(".services-slider .col-md-12"),
+  );
+  const prevBtn = document.querySelector(".services__arrow--left");
+  const nextBtn = document.querySelector(".services__arrow--right");
 
   let index = 0;
-  let slidesToShow = window.innerWidth < 576 ? 1 : 2;
 
-  const updateSlidesToShow = () => {
-    slidesToShow = window.innerWidth < 576 ? 1 : 2;
+  function getSlidesPerView() {
+    return window.innerWidth >= 576 ? 2 : 1;
+  }
 
-    if (index > slides.length - slidesToShow) {
-      index = slides.length - slidesToShow;
-    }
+  function updateSlider() {
+    const slidesPerView = getSlidesPerView();
+    const slideWidth = slides[0].getBoundingClientRect().width;
 
-    moveSlider();
-  };
+    // Плавная анимация
+    slider.style.transition = "transform 0.5s ease";
+    slider.style.transform = `translateX(-${index * slideWidth}px)`;
 
-  const moveSlider = () => {
-    const translatePercent = 100 / slidesToShow;
-    wrapper.style.transform = `translateX(-${index * translatePercent}%)`;
-  };
+    // Блокируем кнопки на границах
+    prevBtn.style.opacity = index <= 0 ? "0.3" : "1";
+    nextBtn.style.opacity =
+      index >= slides.length - slidesPerView ? "0.3" : "1";
+  }
 
-  next.addEventListener("click", () => {
-    if (index < slides.length - slidesToShow) {
+  nextBtn.addEventListener("click", () => {
+    const slidesPerView = getSlidesPerView();
+    if (index < slides.length - slidesPerView) {
       index++;
-    } else {
-      index = 0;
+      updateSlider();
     }
-    moveSlider();
   });
 
-  prev.addEventListener("click", () => {
+  prevBtn.addEventListener("click", () => {
     if (index > 0) {
       index--;
-    } else {
-      index = slides.length - slidesToShow;
+      updateSlider();
     }
-    moveSlider();
   });
 
-  window.addEventListener("resize", updateSlidesToShow);
+  window.addEventListener("resize", () => {
+    const slidesPerView = getSlidesPerView();
+    if (index > slides.length - slidesPerView) {
+      index = slides.length - slidesPerView;
+      if (index < 0) index = 0;
+    }
+    updateSlider();
+  });
 
-  updateSlidesToShow();
+  updateSlider();
 };
 
 export default servicesSlider;

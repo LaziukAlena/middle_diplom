@@ -538,13 +538,13 @@ input.error {
 .modal-bank:focus bank-img-hover {
   display: inline-block;
 }
+
 #services {
   background-color: #466a78;
 }
 #calc {
   background-color: #466a78;
 }
-
 .service-block {
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
@@ -619,6 +619,7 @@ p.services-image_mobile {
   -webkit-animation-name: rotateInUpLeft;
   animation-name: rotateInUpLeft;
 }
+
 .order {
   background: url("../images/order2-bg.jpg") no-repeat center;
   padding: 80px 0px;
@@ -1436,7 +1437,6 @@ p.services-image_mobile {
     height: 246px;
   }
 }
-
 .box-modal {
   display: none;
 }
@@ -1452,11 +1452,9 @@ input.error {
 .error .agree-text {
   color: red !important;
 }
-
 .footer-created {
   padding-left: 0;
 }
-
 @media only screen and (min-width: 992px) {
   ::-webkit-resizer {
     background-image: url("");
@@ -1482,14 +1480,12 @@ input.error {
     background-color: #2c2c2c;
   }
 }
-
 @media (min-width: 768px) {
   .footer-copyright-text {
     margin-left: 100px;
     padding-top: 45px;
   }
 }
-
 .fancybox-close {
   width: 30px !important;
   height: 30px !important;
@@ -1505,7 +1501,6 @@ input.error {
 .fancybox-close:hover {
   opacity: 1;
 }
-
 .balkony #offer {
   background: url(../images/offer-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
@@ -1513,7 +1508,6 @@ input.error {
 .balkony .order {
   background: url(../images/order-bg.jpg) no-repeat center;
 }
-
 .kuhni #offer {
   background: url(../images/offer3-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
@@ -1524,7 +1518,6 @@ input.error {
 .kuhni #order_2.order {
   background: url(../images/order3-2-bg.jpg) no-repeat center;
 }
-
 .dvery #offer {
   background: url(../images/offer4-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
@@ -1532,7 +1525,6 @@ input.error {
 .dvery .order {
   background: url(../images/order4-bg.jpg) no-repeat center;
 }
-
 .potolki #offer {
   background: url(../images/offer5-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
@@ -1543,11 +1535,9 @@ input.error {
 .header-modal {
   display: none;
 }
-
 .services-modal {
   display: none;
 }
-
 .services-modal--opened {
   position: fixed;
   top: 50%;
@@ -1555,7 +1545,6 @@ input.error {
   transform: translate(-50%, -50%);
   z-index: 9999;
 }
-
 .header-modal--opened {
   position: fixed;
   top: 50%;
@@ -1563,7 +1552,6 @@ input.error {
   transform: translate(-50%, -50%);
   z-index: 9999;
 }
-
 .header-modal__close {
   position: absolute;
   top: 5px;
@@ -1571,11 +1559,9 @@ input.error {
   font-size: 36px;
   cursor: pointer;
 }
-
 .header-modal__close:hover {
   color: rgba(0, 0, 0, 0.35);
 }
-
 .services-modal__close {
   position: absolute;
   top: 5px;
@@ -1583,11 +1569,9 @@ input.error {
   font-size: 36px;
   cursor: pointer;
 }
-
 .services-modal__close:hover {
   color: rgba(0, 0, 0, 0.35);
 }
-
 .overlay {
   display: none;
   position: fixed;
@@ -1599,18 +1583,15 @@ input.error {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.45);
 }
-
 .benefits-wrap {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
 }
-
 .benefits__item {
   flex: 0 0 100%;
   box-sizing: border-box;
 }
-
 .benefits-arrows {
   display: flex;
   justify-content: space-between;
@@ -1618,17 +1599,14 @@ input.error {
   margin: 15px auto;
   margin-top: 30px;
 }
-
 .benefits__arrow {
   width: 30px;
   height: 30px;
   cursor: pointer;
 }
-
 .benefits__arrow > img {
   width: 100%;
 }
-
 .services-arrows {
   display: flex;
   justify-content: space-between;
@@ -1636,45 +1614,37 @@ input.error {
   margin: 15px auto;
   margin-top: 30px;
 }
-
 .services__arrow {
   width: 30px;
   height: 30px;
   cursor: pointer;
 }
-
 .services__arrow > img {
   width: 100%;
 }
-
 .countdown {
   position: relative;
 }
-
 .count-wrap {
   margin-top: 15px;
   display: flex;
   justify-content: space-around;
 }
-
 .count {
   padding-top: 15px;
   width: 75px;
   height: 100px;
   border: 3px solid gray;
 }
-
 .count > span {
   font-size: 24px;
 }
-
 .smooth-scroll {
   position: fixed;
   right: 25px;
   bottom: 25px;
   transform: rotate(90deg);
 }
-
 @media (min-width: 576px) {
   .benefits__item {
     flex: 0 0 33.3333%;
