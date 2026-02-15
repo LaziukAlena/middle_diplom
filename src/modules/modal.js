@@ -40,8 +40,6 @@ const modal = () => {
   document
     .querySelector(".services-modal__close")
     ?.addEventListener("click", closeModals);
-
-  overlay.addEventListener("click", closeModals);
 };
 
 export default modal;

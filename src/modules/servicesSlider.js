@@ -1,54 +1,42 @@
 const servicesSlider = () => {
   const slider = document.querySelector(".services-slider");
-  const slides = Array.from(
-    document.querySelectorAll(".services-slider .col-md-12"),
-  );
-  const prevBtn = document.querySelector(".services__arrow--left");
-  const nextBtn = document.querySelector(".services__arrow--right");
+  if (!slider) return;
+
+  const slides = Array.from(slider.children);
+  const prev = document.querySelector(".services__arrow--left");
+  const next = document.querySelector(".services__arrow--right");
 
   let index = 0;
 
-  function getSlidesPerView() {
-    return window.innerWidth >= 576 ? 2 : 1;
-  }
+  const getSlidesPerView = () => {
+    return window.innerWidth < 576 ? 1 : 2;
+  };
 
-  function updateSlider() {
-    const slidesPerView = getSlidesPerView();
-    const slideWidth = slides[0].getBoundingClientRect().width;
+  const update = () => {
+    const slideWidth = slides[0].offsetWidth;
+    const maxIndex = slides.length - getSlidesPerView();
 
-    slider.style.transition = "transform 0.5s ease";
+    if (index > maxIndex) index = maxIndex;
+    if (index < 0) index = 0;
+
     slider.style.transform = `translateX(-${index * slideWidth}px)`;
+  };
 
-    prevBtn.style.opacity = index <= 0 ? "0.3" : "1";
-    nextBtn.style.opacity =
-      index >= slides.length - slidesPerView ? "0.3" : "1";
-  }
-
-  nextBtn.addEventListener("click", () => {
-    const slidesPerView = getSlidesPerView();
-    if (index < slides.length - slidesPerView) {
-      index++;
-      updateSlider();
-    }
+  next.addEventListener("click", () => {
+    index++;
+    update();
   });
 
-  prevBtn.addEventListener("click", () => {
-    if (index > 0) {
-      index--;
-      updateSlider();
-    }
+  prev.addEventListener("click", () => {
+    index--;
+    update();
   });
 
   window.addEventListener("resize", () => {
-    const slidesPerView = getSlidesPerView();
-    if (index > slides.length - slidesPerView) {
-      index = slides.length - slidesPerView;
-      if (index < 0) index = 0;
-    }
-    updateSlider();
+    update();
   });
 
-  updateSlider();
+  update();
 };
 
 export default servicesSlider;

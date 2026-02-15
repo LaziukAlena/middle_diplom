@@ -620,6 +620,27 @@ p.services-image_mobile {
   animation-name: rotateInUpLeft;
 }
 
+.services-slider-wrapper {
+  overflow: hidden;
+}
+
+.services-slider {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.services-slide {
+  flex: 0 0 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  .services-slide {
+    flex: 0 0 50%;
+  }
+}
+
 .order {
   background: url("../images/order2-bg.jpg") no-repeat center;
   padding: 80px 0px;
