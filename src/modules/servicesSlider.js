@@ -16,11 +16,9 @@ const servicesSlider = () => {
     const slidesPerView = getSlidesPerView();
     const slideWidth = slides[0].getBoundingClientRect().width;
 
-    // Плавная анимация
     slider.style.transition = "transform 0.5s ease";
     slider.style.transform = `translateX(-${index * slideWidth}px)`;
 
-    // Блокируем кнопки на границах
     prevBtn.style.opacity = index <= 0 ? "0.3" : "1";
     nextBtn.style.opacity =
       index >= slides.length - slidesPerView ? "0.3" : "1";

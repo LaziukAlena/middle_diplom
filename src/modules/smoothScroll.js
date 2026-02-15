@@ -1,26 +1,20 @@
 const smoothScroll = () => {
-  const scrollBtn = document.querySelector(".smooth-scroll");
+  const btn = document.querySelector(".smooth-scroll");
   const firstSection = document.querySelector("#offer");
 
-  if (!scrollBtn || !firstSection) return;
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > firstSection.offsetHeight) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  });
 
-  scrollBtn.style.display = "none";
-
-  scrollBtn.addEventListener("click", () => {
+  btn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  });
-
-  window.addEventListener("scroll", () => {
-    const firstSectionHeight = firstSection.offsetHeight;
-
-    if (window.scrollY > firstSectionHeight) {
-      scrollBtn.style.display = "block";
-    } else {
-      scrollBtn.style.display = "none";
-    }
   });
 };
 

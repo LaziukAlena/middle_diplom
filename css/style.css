@@ -1650,3 +1650,66 @@ input.error {
     flex: 0 0 33.3333%;
   }
 }
+.certificate-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000;
+}
+
+.certificate-modal--active {
+  display: block;
+}
+
+.certificate-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  animation: fadeIn 0.3s ease;
+}
+
+.certificate-modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  max-width: 90%;
+  max-height: 90%;
+  animation: zoomIn 0.3s ease forwards;
+}
+
+.certificate-modal__image {
+  max-width: 100%;
+  max-height: 90vh;
+  display: block;
+}
+
+.certificate-modal__close {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.certificate-modal__close::before,
+.certificate-modal__close::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 24px;
+  background: #fff;
+  top: 3px;
+  left: 14px;
+}
+
+.certificate-modal__close::before {
+  transform: rotate(45deg);
+}
+
+.certificate-modal__close::after {
+  transform: rotate(-45deg);
+}
