@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "start": "webpack serve --mode=development",
+    "build": "webpack --mode=production",
     "watch": "webpack --watch"
   },
   "author": "",
@@ -11,6 +12,7 @@
   "description": "",
   "devDependencies": {
     "webpack": "^5.105.1",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   }
 }

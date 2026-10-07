@@ -1,17 +1,23 @@
-import modal from "./modules/modal";
-import benefitsSlider from "./modules/benefitsSlider";
-import servicesSlider from "./modules/servicesSlider";
+import navbar from "./modules/navbar.js";
+import modal from "./modules/modal.js";
+import benefitsSlider from "./modules/benefitsSlider.js";
+import servicesSlider from "./modules/servicesSlider.js";
 import smoothScroll from "./modules/smoothScroll.js";
+import phoneMask from "./modules/phonemask.js";
 import forms from "./modules/forms.js";
 import certificateModal from "./modules/certificateModal.js";
+import scrollAnimations from "./modules/scrollAnimations.js";
 import timer from "./modules/timer.js";
 import calc from "./modules/calc.js";
 
+navbar();
 modal();
 benefitsSlider();
 servicesSlider();
 smoothScroll();
+phoneMask();
 forms();
 certificateModal();
+scrollAnimations();
 timer();
 calc();
